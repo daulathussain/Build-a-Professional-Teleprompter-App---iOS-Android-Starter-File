@@ -1,0 +1,62 @@
+{
+  "expo": {
+    "name": "Teleprompter",
+    "slug": "teleprompter-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0a0a0a"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "infoPlist": {
+        "NSCameraUsageDescription": "Camera is needed to record your video with the teleprompter.",
+        "NSMicrophoneUsageDescription": "Microphone is needed to record audio with your video.",
+        "NSPhotoLibraryAddUsageDescription": "We need access to save your recorded video to the camera roll.",
+        "NSPhotoLibraryUsageDescription": "We need access to save your recorded video to the camera roll."
+      }
+    },
+    "android": {
+      "package": "com.promptercam.teleprompter",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png",
+        "backgroundColor": "#0a0a0a"
+      },
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.READ_MEDIA_VIDEO",
+        "android.permission.WRITE_EXTERNAL_STORAGE"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Camera is needed to record your video with the teleprompter.",
+          "microphonePermission": "Microphone is needed to record audio with your video.",
+          "recordAudioAndroid": true
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Allow Teleprompter to save videos to your camera roll.",
+          "savePhotosPermission": "Allow Teleprompter to save videos to your camera roll.",
+          "isAccessMediaLocationEnabled": true
+        }
+      ],
+      "expo-video"
+    ]
+  }
+}
